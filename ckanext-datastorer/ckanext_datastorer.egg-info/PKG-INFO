@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: ckanext-datastorer
+Version: 0.1
+Summary: Tasks that upload data to the DataStore.
+Home-page: https://github.com/okfn/ckenext-datastorer
+Author: CKAN team.
+Author-email: ckan-dev@okfn.org
+License: AGPL
+Description:     
+Platform: UNKNOWN

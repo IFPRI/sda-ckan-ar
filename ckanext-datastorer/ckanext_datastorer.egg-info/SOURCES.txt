@@ -1,0 +1,15 @@
+ckanext/__init__.py
+ckanext/datastorer/__init__.py
+ckanext/datastorer/celery_import.py
+ckanext/datastorer/commands.py
+ckanext/datastorer/common.py
+ckanext/datastorer/fetch_resource.py
+ckanext/datastorer/plugin.py
+ckanext/datastorer/tasks.py
+ckanext_datastorer.egg-info/PKG-INFO
+ckanext_datastorer.egg-info/SOURCES.txt
+ckanext_datastorer.egg-info/dependency_links.txt
+ckanext_datastorer.egg-info/entry_points.txt
+ckanext_datastorer.egg-info/namespace_packages.txt
+ckanext_datastorer.egg-info/not-zip-safe
+ckanext_datastorer.egg-info/top_level.txt

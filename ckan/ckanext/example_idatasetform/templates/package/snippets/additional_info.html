@@ -1,0 +1,10 @@
+{% ckan_extends %}
+
+{% block extras %}
+  {% if pkg_dict.citation %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Citation") }}</th>
+      <td class="dataset-details">{{ pkg_dict.citation }}</td>
+    </tr>
+  {% endif %}
+{% endblock %}

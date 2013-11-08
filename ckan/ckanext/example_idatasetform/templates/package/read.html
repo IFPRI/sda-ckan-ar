@@ -1,0 +1,32 @@
+{% ckan_extends %}
+
+{% block package_description %}
+  {{ super() }}
+
+  {# Add our custom country_code field to the dataset read page. #}
+  {#% if pkg.get('country_code') %}
+    <section id="dataset-country_code" class="resources module-content">
+    <p><strong>Country Code</strong>: {{ pkg.country_code[0] }}</p>
+    </section>
+  {% endif %#}
+{#  {% if pkg.get('megasites') %}
+    <section id="dataset-megasites" class="resources module-content">
+    <p><strong>Megasite</strong>: {{ pkg.megasites[0] }}</p>
+    </section>
+  {% endif %}
+  {% if pkg.get('countries') %}
+    <section id="dataset-countries" class="resources module-content">
+    <p><strong>Country</strong>: {{ pkg.countries[0] }}</p>
+    </section>
+  {% endif %}
+  {% if pkg.get('villages') %}
+    <section id="dataset-villages" class="resources module-content">
+    <p><strong>Village</strong>: {{ pkg.villages[0] }}</p>
+    </section>
+  {% endif %}
+  {% if pkg.get('citation') %}
+    <section id="dataset-citation" class="resources module-content">
+    <p><strong>Citation</strong>: {{ pkg.citation }}</p>
+    </section>
+  {% endif %}#}
+{% endblock %}
