@@ -45,6 +45,10 @@ won't work. #}
  </div>
 
   {{ super() }}
+  
+  {% block package_basic_fields_custom %}
+    {{ form.markdown('citation', label=_('Citation'), id='field-citation', placeholder=_('citation'), value=data.citation, error=errors.citation) }}
+  {% endblock %}
 
 {% endblock %}
 
