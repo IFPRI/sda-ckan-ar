@@ -10,18 +10,36 @@
     </section>
   {% endif %#}
   {% if pkg.get('megasites') %}
-    <section id="dataset-megasites" class="resources module-content">
-    <p><strong>Megasite</strong>: {{ pkg.megasites[0] }}</p>
+    <section id="dataset-megasites" class="tags module-content">
+    <p><strong>Megasites</strong>
+	<ul class="tag-list well">
+  	{% for megasite in pkg.megasites %}
+    		<li><a href="{% url_for controller='package', action='search', vocab_megasites=megasite %}">{{ megasite }}</a></li>
+  	{% endfor %}
+	</ul>
+    </p>
     </section>
   {% endif %}
   {% if pkg.get('countries') %}
-    <section id="dataset-countries" class="resources module-content">
-    <p><strong>Country</strong>: {{ pkg.countries[0] }}</p>
+    <section id="dataset-countries" class="tags module-content">
+    <p><strong>Countries</strong>
+	<ul class="tag-list well">
+        {% for country in pkg.countries %}
+                <li><a href="{% url_for controller='package', action='search', vocab_countries=country %}">{{ country }}</a></li>
+        {% endfor %}
+        </ul>
+    </p>
     </section>
   {% endif %}
   {% if pkg.get('villages') %}
     <section id="dataset-villages" class="resources module-content">
-    <p><strong>Village</strong>: {{ pkg.villages[0] }}</p>
+    <p><strong>Villages</strong>
+        <ul class="tag-list well">
+        {% for village in pkg.villages %}
+                <li><a href="{% url_for controller='package', action='search', vocab_villages=village %}">{{ village }}</a></li>
+        {% endfor %}
+        </ul>
+    </p>
     </section>
   {% endif %}
   {% if pkg.get('citation') %}

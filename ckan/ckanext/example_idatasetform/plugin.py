@@ -134,7 +134,7 @@ class ExampleIDatasetFormPlugin(plugins.SingletonPlugin,
         # convert_to_extras instead of convert_to_tags.
         schema.update({
                 'citation': [tk.get_validator('ignore_missing'),
-		    tk.get_converter('convert_to_extras')('citation')]
+		    tk.get_converter('convert_to_extras')]
                 })
 #	schema['resources'].update({
 #        	'citation_resource' : [ tk.get_validator('ignore_missing') ]

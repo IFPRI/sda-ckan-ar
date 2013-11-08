@@ -9,7 +9,6 @@ won't work. #}
 
 {% block package_metadata_fields %}
 
-  <div class="control-group">
 {#    <label class="control-label" for="field-country_code">{{ _("Country Code") }}</label>
     <div class="controls">
       <select id="field-country_code" name="country_code" data-module="autocomplete">
@@ -18,34 +17,40 @@ won't work. #}
         {% endfor %}
       </select>
     </div>#}
-    <label class="control-label" for="field-countries">{{ _("Megasites") }}</label>
+
+  {{ super() }}
+
+  <div class="control-group">
+    <label class="control-label" for="field-megasites">{{ _("Megasites") }}</label>
     <div class="controls">
-      <select id="field-megasites" name="megasites" data-module="autocomplete">
-        {% for megasite in h.megasites()  %}
-          <option value="{{ megasite }}" {% if megasite in data.get('megasites', []) %}selected="selected"{% endif %}>{{ megasite }}</option>
-        {% endfor %}
+      <select id="field-megasites" name="megasites" data-module="autocomplete" autocomplete="off" multiple="multiple" style="width: 334px">
+	{% for megasite in h.megasites()  %}
+	  <option value="{{ megasite }}" {% if megasite in data.get('megasites', []) %}selected="selected"{% endif %}>{{ megasite }}</option>
+	{% endfor %}
       </select>
     </div>
+  </div>
+  <div class="control-group">
     <label class="control-label" for="field-countries">{{ _("Countries") }}</label>
     <div class="controls">
-      <select id="field-countries" name="countries" data-module="autocomplete">
+      <select id="field-countries" name="countries" data-module="autocomplete" autocomplete="off" multiple="multiple" style="width: 334px">
         {% for country in h.countries()  %}
           <option value="{{ country }}" {% if country in data.get('countries', []) %}selected="selected"{% endif %}>{{ country }}</option>
         {% endfor %}
       </select>
     </div>
+  </div>
+  <div class="control-group">
     <label class="control-label" for="field-villages">{{ _("Villages") }}</label>
     <div class="controls">
-      <select id="field-villages" name="villages" data-module="autocomplete">
-        {% for village in h.villages()  %}
+      <select id="field-villages" name="villages" data-module="autocomplete" autocomplete="off" multiple="multiple" style="width: 334px">
+	{% for village in h.villages()  %}
           <option value="{{ village }}" {% if village in data.get('villages', []) %}selected="selected"{% endif %}>{{ village }}</option>
         {% endfor %}
       </select>
     </div>
  </div>
 
-  {{ super() }}
-  
   {% block package_basic_fields_custom %}
     {{ form.markdown('citation', label=_('Citation'), id='field-citation', placeholder=_('citation'), value=data.citation, error=errors.citation) }}
   {% endblock %}
